@@ -10,7 +10,7 @@ Gem::Specification.new do |s|
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Gabe Coyne"]
   s.date = "2013-01-12"
-  s.description = "TODO: longer description of your gem"
+  s.description = "Easy wysiwyg editing of website content and images"
   s.email = "gabe@killitcreative.com"
   s.extra_rdoc_files = [
     "LICENSE.txt",
@@ -52,7 +52,7 @@ Gem::Specification.new do |s|
   s.licenses = ["MIT"]
   s.require_paths = ["lib"]
   s.rubygems_version = "1.8.21"
-  s.summary = "TODO: one-line summary of your gem"
+  s.summary = "Editables"
 
   if s.respond_to? :specification_version then
     s.specification_version = 3
