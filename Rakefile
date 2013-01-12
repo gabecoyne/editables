@@ -17,8 +17,10 @@ Jeweler::Tasks.new do |gem|
   gem.name = "editables"
   gem.homepage = "http://github.com/gabecoyne/editables"
   gem.license = "MIT"
-  gem.summary = %Q{TODO: one-line summary of your gem}
-  gem.description = %Q{TODO: longer description of your gem}
+  gem.summary = "Editables"
+  gem.description = "Easy wysiwyg editing of website content and images"
+  # gem.summary = %Q{TODO: one-line summary of your gem}
+  # gem.description = %Q{TODO: longer description of your gem}
   gem.email = "gabe@killitcreative.com"
   gem.authors = ["Gabe Coyne"]
   # dependencies defined in Gemfile
