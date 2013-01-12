@@ -39,6 +39,7 @@ Gem::Specification.new do |s|
     "db/migrate/20130101211230_create_editables_editable_images.rb",
     "db/migrate/20130101211330_add_attachment_image_to_editable_images.rb",
     "db/migrate/20130101211417_create_editables.rb",
+    "editables.gemspec",
     "lib/editables.rb",
     "lib/editables/engine.rb",
     "lib/editables/version.rb",
