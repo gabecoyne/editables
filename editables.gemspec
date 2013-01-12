@@ -5,7 +5,7 @@
 
 Gem::Specification.new do |s|
   s.name = "editables"
-  s.version = ""
+  s.version = "0.0.0"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Gabe Coyne"]
@@ -27,6 +27,7 @@ Gem::Specification.new do |s|
     "README.rdoc",
     "README.textile",
     "Rakefile",
+    "VERSION",
     "app/assets/images/editables/.gitkeep",
     "app/assets/javascripts/editables/application.js",
     "app/assets/stylesheets/editables/application.css",
