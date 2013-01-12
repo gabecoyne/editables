@@ -1,0 +1,29 @@
+http://edgeguides.rubyonrails.org/engines.html
+
+h1. Installation
+
+	gem 'editables'
+	
+	copy migration file and run it
+	
+	add this to ApplicationController.rb
+	
+		class ApplicationController < ActionController::Base
+		  helper Editables::Engine.helpers
+		end
+		
+	rake editables:install:migrations
+	
+	<!-- add this to the top of your layout file right after the body tag 
+		
+		yield :body_top -->
+	
+h1. Customization
+
+	override default can_edit? methods in ApplicationHelper
+	
+	def can_edit?
+     return false if params[:noedit].present?
+     return true if current_admin
+     false
+   end
