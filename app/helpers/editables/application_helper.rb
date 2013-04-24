@@ -61,11 +61,11 @@ module Editables
       form_id = "editable-image-#{name.gsub(" ","-")}"
       image = Editables::EditableImage.find_by_name(name)
       if image.present?
-        if width > 1200
+        if width >= 1200
           src = image.image(:original)
-        elsif width < 1200 && width > 600
+        elsif width < 1200 && width >= 600
           src = image.image(:large)
-        elsif width < 600 && width > 300
+        elsif width < 600 && width >= 300
           src = image.image(:medium)
         else
           src = image.image(:small)

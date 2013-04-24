@@ -27,3 +27,8 @@ h1. Customization
      return true if current_admin
      false
    end
+
+h1. New Release
+
+* git commit -m "update"
+* bundle exec rake version:bump:patch
