@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = "editables"
-  s.version = "0.0.3"
+  s.version = "0.0.5"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Gabe Coyne"]
-  s.date = "2013-04-24"
+  s.date = "2013-04-26"
   s.description = "Easy wysiwyg editing of website content and images"
   s.email = "gabe@killitcreative.com"
   s.extra_rdoc_files = [
