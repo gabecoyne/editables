@@ -12,6 +12,10 @@ h1. Installation
 		class ApplicationController < ActionController::Base
 		  helper Editables::Engine.helpers
 		end
+
+	add this to routes routes.rb
+
+		mount Editables::Engine, at: "/editables"
 	
 	<!-- add this to the top of your layout file right after the body tag 
 		

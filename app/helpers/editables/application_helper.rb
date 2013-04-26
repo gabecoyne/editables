@@ -84,7 +84,7 @@ module Editables
       end
       if can_edit?
         html += [
-          "<form action='/editables/image' method='post' enctype='multipart/form-data' id='#{form_id}' style='width:90px; margin:-50px 10px 0 10px; overflow:hidden; position:relative; z-index:10' >",
+          "<form action='/editables/image' method='post' enctype='multipart/form-data' id='#{form_id}' style='width:90px; height:35px; margin:-35px 10px 0 10px; overflow:hidden; position:relative; z-index:10' >",
             "<input type='file' name='editable_image[image]' onchange='$(\"##{form_id}\").submit()' style='border:none;padding0' />",
             "<input type='hidden' name='editable_image[name]' value='#{name}'/>",
             "<input type='hidden' name='authenticity_token' value='#{form_authenticity_token}'/>",
