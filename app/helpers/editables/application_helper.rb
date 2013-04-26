@@ -9,9 +9,14 @@ module Editables
     def wysiwyg
       if !@wysiwyg
         @wysiwyg = true
+        if FileTest.exists?(Rails.root.join('public', 'ckeditor', "ckeditor.js"))
+          base_dir = "/ckeditor"
+        else
+          base_dir = "/assets/ckeditor"
+        end
         return [
-          '<script src="/assets/ckeditor/ckeditor.js" ></script>',
-          '<script src="/assets/ckeditor/adapters/jquery.js" ></script>',
+          '<script src="'+base_dir+'/ckeditor.js" ></script>',
+          '<script src="'+base_dir+'/adapters/jquery.js" ></script>',
           '<script>$(function(){ $("textarea.editor").ckeditor(); })</script>'
         ].join(" ").html_safe
       else
