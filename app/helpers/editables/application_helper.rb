@@ -79,17 +79,18 @@ module Editables
         src = "http://placehold.it/#{width}x#{height}"
       end
       html = ""
-      if image.present? or can_edit?
-        html +=  "<img src='#{src}' alt='#{name}' width='#{width}' height='#{height}' />"
-      end
       if can_edit?
         html += [
-          "<form action='/editables/image' method='post' enctype='multipart/form-data' id='#{form_id}' style='width:90px; height:35px; margin:-35px 10px 0 10px; overflow:hidden; position:relative; z-index:10' >",
+          "<a class='btn btn-mini pull-right' onclick='$(this).next().find(\"input[type=file]\").click()' style='margin:10px;margin-bottom:-40px;position:relative;z-index:1000;'>Upload</a>",
+          "<form action='/editables/image' method='post' enctype='multipart/form-data' id='#{form_id}' style='display:none' >",
             "<input type='file' name='editable_image[image]' onchange='$(\"##{form_id}\").submit()' style='border:none;padding0' />",
             "<input type='hidden' name='editable_image[name]' value='#{name}'/>",
             "<input type='hidden' name='authenticity_token' value='#{form_authenticity_token}'/>",
           "</form>"
         ].join(" ")
+      end
+      if image.present? or can_edit?
+        html +=  "<img src='#{src}' alt='#{name}' width='#{width}' height='#{height}' />"
       end
       # html += "</div>"
       html.html_safe
