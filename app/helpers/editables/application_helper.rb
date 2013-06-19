@@ -66,7 +66,9 @@ module Editables
       form_id = "editable-image-#{name.gsub(" ","-")}"
       image = Editables::EditableImage.find_by_name(name)
       if image.present?
-        if width >= 1200
+        if image.image(:cropped).present? && (open(image.image(:cropped)) rescue false)
+          src = image.image(:cropped)  
+        elsif width >= 1200
           src = image.image(:original)
         elsif width < 1200 && width >= 600
           src = image.image(:large)
@@ -85,6 +87,8 @@ module Editables
           "<form action='/editables/image' method='post' enctype='multipart/form-data' id='#{form_id}' style='display:none' >",
             "<input type='file' name='editable_image[image]' onchange='$(\"##{form_id}\").submit()' style='border:none;padding0' />",
             "<input type='hidden' name='editable_image[name]' value='#{name}'/>",
+            "<input type='hidden' name='editable_image[width]' value='#{width}'/>",
+            "<input type='hidden' name='editable_image[height]' value='#{height}'/>",
             "<input type='hidden' name='authenticity_token' value='#{form_authenticity_token}'/>",
           "</form>"
         ].join(" ")

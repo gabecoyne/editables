@@ -16,6 +16,7 @@ module Editables
       else
         @image = Editables::EditableImage.create(params[:editable_image])
       end
+      @image.image.reprocess!
       redirect_to :back
     end
   end
