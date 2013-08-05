@@ -63,10 +63,11 @@ module Editables
     end
   
     def editable_image_tag(name, width, height)
+      image = Editables::EditableImage.find_by_name(name) 
       form_id = "editable-image-#{name.gsub(" ","-")}"
-      image = Editables::EditableImage.find_by_name(name)
       if image.present?
-        if image.image(:cropped).present? && (open(image.image(:cropped)) rescue false)
+        # if image.image(:cropped).present? && (open(image.image(:cropped)) rescue false)
+        if image.image(:cropped).present?
           src = image.image(:cropped)  
         elsif width >= 1200
           src = image.image(:original)
@@ -96,7 +97,6 @@ module Editables
       if image.present? or can_edit?
         html +=  "<img src='#{src}' alt='#{name}' width='#{width}' height='#{height}' />"
       end
-      # html += "</div>"
       html.html_safe
     end
   end
